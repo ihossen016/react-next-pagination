@@ -1,13 +1,12 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
-
 // styles
 import "./styles.css";
 
 // components
+import PrevBtn from "./PrevBtn";
 import PageNumbers from "./PageNumbers";
+import NextBtn from "./NextBtn";
 
 export const ReactNextPagination = ({
     baseDir,
@@ -22,22 +21,12 @@ export const ReactNextPagination = ({
 
     return (
         <div className={"rnp-container"}>
-            {currentPage <= 1 ? (
-                <button className={"rnp-prev-next disable-btn"} disabled>
-                    Prev
-                </button>
-            ) : (
-                <Link
-                    className={"rnp-prev-next"}
-                    href={
-                        currentPage <= 2
-                            ? `/${baseDir}`
-                            : `/${baseDir}/${subDir}/${currentPage - 1}`
-                    }
-                >
-                    Prev
-                </Link>
-            )}
+            <PrevBtn
+                baseDir={baseDir}
+                subDir={subDir}
+                currentPage={currentPage}
+                text={"Prev"}
+            />
 
             <PageNumbers
                 pageNumbers={pageNumbers}
@@ -46,18 +35,13 @@ export const ReactNextPagination = ({
                 subDir={subDir}
             />
 
-            {currentPage >= Number(totalPage) ? (
-                <button className={"rnp-prev-next disable-btn"} disabled>
-                    Next
-                </button>
-            ) : (
-                <Link
-                    className={"rnp-prev-next"}
-                    href={`/${baseDir}/${subDir}/${currentPage + 1}`}
-                >
-                    Next
-                </Link>
-            )}
+            <NextBtn
+                baseDir={baseDir}
+                subDir={subDir}
+                totalPage={totalPage}
+                currentPage={currentPage}
+                text={"Next"}
+            />
         </div>
     );
 };
