@@ -9,7 +9,7 @@ const PageNumbers = ({
     subDir,
     maxVisiblePages = 3,
 }) => {
-    const createPageButton = (pageNumber) => {
+    const createPageButton = (pageNumber, totalPages) => {
         return (
             <Link
                 key={pageNumber}
@@ -19,7 +19,9 @@ const PageNumbers = ({
                         : `/${baseDir}`
                 }
                 className={
-                    pageNumber === currentPage
+                    pageNumber === currentPage ||
+                    (pageNumber === 1 && currentPage < 1) ||
+                    (pageNumber === totalPages && currentPage > totalPages)
                         ? "rnp-page-number active"
                         : "rnp-page-number"
                 }
@@ -33,8 +35,8 @@ const PageNumbers = ({
         const totalPages = pageNumbers.length;
 
         if (totalPages <= maxVisiblePages) {
-            return pageNumbers.map((pageNumber) =>
-                createPageButton(pageNumber)
+            return pageNumbers.map(pageNumber =>
+                createPageButton(pageNumber, totalPages)
             );
         } else {
             let startPage = Math.max(
@@ -50,21 +52,21 @@ const PageNumbers = ({
             const buttons = [];
 
             if (startPage > 1) {
-                buttons.push(createPageButton(1));
+                buttons.push(createPageButton(1, totalPages));
                 if (startPage > 2) {
                     buttons.push(<span key="start-ellipsis">...</span>);
                 }
             }
 
             for (let i = startPage; i <= endPage; i++) {
-                buttons.push(createPageButton(i));
+                buttons.push(createPageButton(i, totalPages));
             }
 
             if (endPage < totalPages) {
                 if (endPage < totalPages - 1) {
                     buttons.push(<span key="end-ellipsis">...</span>);
                 }
-                buttons.push(createPageButton(totalPages));
+                buttons.push(createPageButton(totalPages, totalPages));
             }
 
             return buttons;
