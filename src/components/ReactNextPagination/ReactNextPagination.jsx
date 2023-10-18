@@ -4,7 +4,7 @@
 import "./styles.css";
 
 // components
-import PageNumbers from "./PageNumbers";
+import PageNumbers from "./Numbers/PageNumbers";
 import PrevNextBtn from "./PrevNextBtn";
 
 export const ReactNextPagination = ({
