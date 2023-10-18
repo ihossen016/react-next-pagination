@@ -4,9 +4,8 @@
 import "./styles.css";
 
 // components
-import PrevBtn from "./PrevBtn";
 import PageNumbers from "./PageNumbers";
-import NextBtn from "./NextBtn";
+import PrevNextBtn from "./PrevNextBtn";
 
 export const ReactNextPagination = ({
     baseDir,
@@ -21,9 +20,10 @@ export const ReactNextPagination = ({
 
     return (
         <div className={"rnp-container"}>
-            <PrevBtn
+            <PrevNextBtn
                 baseDir={baseDir}
                 subDir={subDir}
+                totalPage={totalPage}
                 currentPage={currentPage}
                 text={"Prev"}
             />
@@ -35,12 +35,13 @@ export const ReactNextPagination = ({
                 subDir={subDir}
             />
 
-            <NextBtn
+            <PrevNextBtn
                 baseDir={baseDir}
                 subDir={subDir}
                 totalPage={totalPage}
                 currentPage={currentPage}
                 text={"Next"}
+                isNextBtn={true}
             />
         </div>
     );
