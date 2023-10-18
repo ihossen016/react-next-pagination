@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import NumberBtn from "./NumberBtn";
 
 const PageNumbers = ({
     pageNumbers,
@@ -9,35 +9,19 @@ const PageNumbers = ({
     subDir,
     maxVisiblePages = 3,
 }) => {
-    const createPageButton = (pageNumber, totalPages) => {
-        return (
-            <Link
-                key={pageNumber}
-                href={
-                    pageNumber > 1
-                        ? `/${baseDir}/${subDir}/${pageNumber}`
-                        : `/${baseDir}`
-                }
-                className={
-                    pageNumber === currentPage ||
-                    (pageNumber === 1 && currentPage < 1) ||
-                    (pageNumber === totalPages && currentPage > totalPages)
-                        ? "rnp-page-number active"
-                        : "rnp-page-number"
-                }
-            >
-                {pageNumber}
-            </Link>
-        );
-    };
-
     const renderPagination = () => {
         const totalPages = pageNumbers.length;
 
         if (totalPages <= maxVisiblePages) {
-            return pageNumbers.map(pageNumber =>
-                createPageButton(pageNumber, totalPages)
-            );
+            return pageNumbers.map(pageNumber => (
+                <NumberBtn
+                    baseDir={baseDir}
+                    subDir={subDir}
+                    pageNumber={pageNumber}
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                />
+            ));
         } else {
             let startPage = Math.max(
                 1,
@@ -52,21 +36,47 @@ const PageNumbers = ({
             const buttons = [];
 
             if (startPage > 1) {
-                buttons.push(createPageButton(1, totalPages));
+                buttons.push(
+                    <NumberBtn
+                        baseDir={baseDir}
+                        subDir={subDir}
+                        pageNumber={1}
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                    />
+                );
+
                 if (startPage > 2) {
                     buttons.push(<span key="start-ellipsis">...</span>);
                 }
             }
 
             for (let i = startPage; i <= endPage; i++) {
-                buttons.push(createPageButton(i, totalPages));
+                buttons.push(
+                    <NumberBtn
+                        baseDir={baseDir}
+                        subDir={subDir}
+                        pageNumber={i}
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                    />
+                );
             }
 
             if (endPage < totalPages) {
                 if (endPage < totalPages - 1) {
                     buttons.push(<span key="end-ellipsis">...</span>);
                 }
-                buttons.push(createPageButton(totalPages, totalPages));
+
+                buttons.push(
+                    <NumberBtn
+                        baseDir={baseDir}
+                        subDir={subDir}
+                        pageNumber={totalPages}
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                    />
+                );
             }
 
             return buttons;
