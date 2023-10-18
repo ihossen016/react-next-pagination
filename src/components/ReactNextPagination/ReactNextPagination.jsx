@@ -1,8 +1,7 @@
 "use client";
-import React from "react";
 
+import React from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 
 // styles
 import "./styles.css";
@@ -13,13 +12,9 @@ import PageNumbers from "./PageNumbers";
 export const ReactNextPagination = ({
     baseDir,
     subDir,
-    // subDirPageCountkey,
     totalPage,
     currentPage,
 }) => {
-    const params = useParams();
-
-    // const currentPage = Number(params[subDirPageCountkey]) || 1;
     const pageNumbers = Array.from(
         { length: Number(totalPage) },
         (_, i) => i + 1
@@ -27,7 +22,7 @@ export const ReactNextPagination = ({
 
     return (
         <div className={"rnp-container"}>
-            {currentPage === 1 ? (
+            {currentPage <= 1 ? (
                 <button className={"rnp-prev-next disable-btn"} disabled>
                     Prev
                 </button>
@@ -51,7 +46,7 @@ export const ReactNextPagination = ({
                 subDir={subDir}
             />
 
-            {currentPage === Number(totalPage) ? (
+            {currentPage >= Number(totalPage) ? (
                 <button className={"rnp-prev-next disable-btn"} disabled>
                     Next
                 </button>
