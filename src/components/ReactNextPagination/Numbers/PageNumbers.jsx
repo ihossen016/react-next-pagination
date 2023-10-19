@@ -19,8 +19,8 @@ const PageNumbers = ({
                     baseDir={baseDir}
                     subDir={subDir}
                     pageNumber={pageNumber}
-                    currentPage={currentPage}
-                    totalPages={totalPages}
+                    currentPage={Number(currentPage)}
+                    totalPages={Number(totalPages)}
                 />
             ));
         } else {
@@ -43,8 +43,8 @@ const PageNumbers = ({
                         baseDir={baseDir}
                         subDir={subDir}
                         pageNumber={1}
-                        currentPage={currentPage}
-                        totalPages={totalPages}
+                        currentPage={Number(currentPage)}
+                        totalPages={Number(totalPages)}
                     />
                 );
 
@@ -60,8 +60,8 @@ const PageNumbers = ({
                         baseDir={baseDir}
                         subDir={subDir}
                         pageNumber={i}
-                        currentPage={currentPage}
-                        totalPages={totalPages}
+                        currentPage={Number(currentPage)}
+                        totalPages={Number(totalPages)}
                     />
                 );
             }
@@ -77,8 +77,8 @@ const PageNumbers = ({
                         baseDir={baseDir}
                         subDir={subDir}
                         pageNumber={totalPages}
-                        currentPage={currentPage}
-                        totalPages={totalPages}
+                        currentPage={Number(currentPage)}
+                        totalPages={Number(totalPages)}
                     />
                 );
             }
