@@ -68,4 +68,4 @@ If you encounter any issues or have questions about this package, please feel fr
 
 ## Author
 
-[react-next-pagination](https://github.com/ihossen016/react-next-pagination) package is maintained by [Ismail Hossen](https://github.com/ihossen016).
+[react-next-pagination](https://github.com/ihossen016/react-next-pagination) package is created and maintained by [Ismail Hossen](https://github.com/ihossen016).
