@@ -14,9 +14,9 @@ https://xyz.com/products/page/2
 ...
 https://xyz.com/products/page/20
 
-# /products  -- Base Directory
-# /page      -- Sub Directory
-# /2 or /20  -- Current Page Number
+# /products         -- Base Directory
+# /page             -- Sub Directory
+# /2 or /20         -- Current Page Number
 ```
 
 if your application have similar routes like these to show products or other data and want to nevigate these pages with a pagination than **react-next-pagination** is the perfect package for you.
