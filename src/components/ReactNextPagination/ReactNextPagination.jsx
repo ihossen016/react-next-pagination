@@ -23,8 +23,8 @@ export const ReactNextPagination = ({
             <PrevNextBtn
                 baseDir={baseDir}
                 subDir={subDir}
-                totalPage={totalPage}
-                currentPage={currentPage}
+                totalPage={Number(totalPage)}
+                currentPage={Number(currentPage)}
                 text={"Prev"}
             />
 
@@ -38,8 +38,8 @@ export const ReactNextPagination = ({
             <PrevNextBtn
                 baseDir={baseDir}
                 subDir={subDir}
-                totalPage={totalPage}
-                currentPage={currentPage}
+                totalPage={Number(totalPage)}
+                currentPage={Number(currentPage)}
                 text={"Next"}
                 isNextBtn={true}
             />
