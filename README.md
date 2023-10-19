@@ -27,7 +27,7 @@ yarn add react-next-pagination
 Here's how you can use **react-next-pagination** in your NextJS applications:
 
 ```javascript
-// ** Example Base File Location: app/products/page.jsx **
+// ** Base File Location: app/products/page.jsx **
 
 import { ReactNextPagination } from "react-next-pagination";
 
