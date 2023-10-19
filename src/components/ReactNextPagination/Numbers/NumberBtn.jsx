@@ -3,7 +3,6 @@ import Link from "next/link";
 function NumberBtn({ baseDir, subDir, pageNumber, currentPage, totalPages }) {
     return (
         <Link
-            key={pageNumber}
             href={
                 pageNumber > 1
                     ? `/${baseDir}/${subDir}/${pageNumber}`

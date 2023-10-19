@@ -15,6 +15,7 @@ const PageNumbers = ({
         if (totalPages <= maxVisiblePages) {
             return pageNumbers.map(pageNumber => (
                 <NumberBtn
+                    key={pageNumber}
                     baseDir={baseDir}
                     subDir={subDir}
                     pageNumber={pageNumber}
@@ -38,6 +39,7 @@ const PageNumbers = ({
             if (startPage > 1) {
                 buttons.push(
                     <NumberBtn
+                        key={1}
                         baseDir={baseDir}
                         subDir={subDir}
                         pageNumber={1}
@@ -54,6 +56,7 @@ const PageNumbers = ({
             for (let i = startPage; i <= endPage; i++) {
                 buttons.push(
                     <NumberBtn
+                        key={i}
                         baseDir={baseDir}
                         subDir={subDir}
                         pageNumber={i}
@@ -70,6 +73,7 @@ const PageNumbers = ({
 
                 buttons.push(
                     <NumberBtn
+                        key={totalPages}
                         baseDir={baseDir}
                         subDir={subDir}
                         pageNumber={totalPages}
