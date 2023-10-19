@@ -1,12 +1,25 @@
 # react-next-pagination
 
-### A pagination component for your **NextJS Application**.
+### A pagination package for your NextJS Application.
 
-By installing this component it'll not only handle pagination of your application but also handle route change of your application.
+Installing this package and importing it will not only handle the pagination of your application but also automatically handle the route changes of your application related to the pagination.
 
 ## Use Case
 
-if your application have similar routes like these `https://xyz.com/products/page/2` **,** `https://xyz.com/products/page/3` to show products or other data and want to nevigate these pages with a pagination than **react-next-pagination** is the perfect component for you.
+```bash
+# Example Routes
+
+https://xyz.com/products
+https://xyz.com/products/page/2
+...
+https://xyz.com/products/page/20
+
+# /products  -- Base Directory
+# /page      -- Sub Directory
+# /2 or /20  -- Current Page Number
+```
+
+if your application have similar routes like these to show products or other data and want to nevigate these pages with a pagination than **react-next-pagination** is the perfect package for you.
 
 ## Installation
 
