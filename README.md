@@ -61,3 +61,11 @@ function Products() {
 
 export default Products;
 ```
+
+## Issues
+
+If you encounter any issues or have questions about this package, please feel free to [open an issue](https://github.com/ihossen016/react-next-pagination/issues) on GitHub.
+
+## Author
+
+**react-next-pagination** is maintained by [Ismail Hossen](https://github.com/ihossen016).
