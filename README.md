@@ -93,7 +93,7 @@ export default NumberPage;
 
 ######
 
-![Output Demo](output.gif)
+![Output Demo](https://awesomescreenshot.s3.amazonaws.com/image/4345048/43702053-0465b8c5d808e21d6efffebc3cd809bf.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20231020%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231020T060844Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=77839fe1f64b2cae6cb9504e7ac5cfc51c89b6eba52c90594522439dcf0a0ed4)
 
 ## Demo
 
