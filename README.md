@@ -89,6 +89,12 @@ function NumberPage() {
 export default NumberPage;
 ```
 
+## Output
+
+## Demo
+
+[Live Demo](https://server-side-pagination-one.vercel.app/products)
+
 ## Issues
 
 If you encounter any issues or have questions about this package, please feel free to [open an issue](https://github.com/ihossen016/react-next-pagination/issues) on GitHub.
