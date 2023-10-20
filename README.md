@@ -40,7 +40,7 @@ yarn add react-next-pagination
 Here's how you can use **react-next-pagination** in your NextJS applications:
 
 ```javascript
-// ** Base File Location: app/products/page.jsx **
+// ** File Location: app/products/page.jsx **
 
 import { ReactNextPagination } from "react-next-pagination";
 
@@ -60,6 +60,33 @@ function Products() {
 }
 
 export default Products;
+```
+
+```javascript
+// ** File Location: app/products/page/[pageNum]/page.jsx **
+
+import { ReactNextPagination } from "react-next-pagination";
+import { useParams } from "next/navigation";
+
+function NumberPage() {
+    const params = useParams();
+    const { pageNum } = params;
+
+    return (
+        <div className="flex justify-center items-center flex-col">
+            <p>products</p>
+
+            <ReactNextPagination
+                baseDir={"products"} // name of the base directory from where pagination starts
+                subDir={"page"} // name of the sub directory where the pagination will lead to
+                totalPage={20} // total number of pages
+                currentPage={pageNum} // current page number
+            />
+        </div>
+    );
+}
+
+export default NumberPage;
 ```
 
 ## Issues
