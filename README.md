@@ -91,6 +91,10 @@ export default NumberPage;
 
 ## Output
 
+######
+
+![Output Demo](output.gif)
+
 ## Demo
 
 [Live Demo](https://server-side-pagination-one.vercel.app/products)
