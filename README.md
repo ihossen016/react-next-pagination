@@ -87,6 +87,15 @@ function NumberPage({ params }) {
 export default NumberPage;
 ```
 
+## Props
+
+| Props       |  Type  | Description                                                 |
+| :---------- | :----: | :---------------------------------------------------------- |
+| baseDir     | string | name of the base directory from where pagination starts     |
+| subDir      | string | name of the sub directory where the pagination will lead to |
+| totalPage   | number | total number of pages                                       |
+| currentPage | number | current page number                                         |
+
 ## Output
 
 ######
