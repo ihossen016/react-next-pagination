@@ -1,1 +1,1 @@
-export * from "./components/ReactNextPagination";
+export * from "./components";
