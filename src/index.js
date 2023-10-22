@@ -1,1 +1,1 @@
-export { default as ReactNextPagination } from "./components";
+export * from "./components";
